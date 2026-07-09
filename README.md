@@ -1,2 +1,3 @@
 # pytorchlearning
-pytorch-cuda learning
+Learning everything in AI with Pytorch
+JUST FOR FUN!
