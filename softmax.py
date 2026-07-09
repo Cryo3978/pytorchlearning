@@ -1,7 +1,7 @@
 import torch
 import time
 
-a = torch.randn(10, 512, device = "cuda")
+a = torch.randn(10, 512, device = "cpu")
 
 def softmax(a):
     start = time.perf_counter()
@@ -28,6 +28,4 @@ print(stable_softmax(a))
 
 from torch.nn.functional import softmax as Softmax
 
-print(Softmax(a))
-
-print(torch.allclose(Softmax(a),stable_softmax(a),atol = 1e-6))
+print(torch.allclose(Softmax(a, dim = -1),stable_softmax(a),atol = 1e-6))
